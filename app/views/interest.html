@@ -1,0 +1,57 @@
+<navigation></navigation>
+<div class="navbar-offset">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row marketing">
+            <h2>VAR MED OCH FÖRÄNDRA!</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row marketing">
+        <div class="col-md-12">
+          <p>Vi håller för fullt på att utveckla vår produkt. Vi letar just nu aktivt efter handlare som vill vara med och ta fram framtidens returhanteringssystem. Att vara med tidigt har många fördelar och du kan vara med och påverka utformningen av systemet.</p>
+        </div>
+      </div>
+      <div class="row marketing" ng-show="hasSubmitted===true">
+        <h3>Tack för visat intresse</h3>
+        <p>Vi hör av oss snarast till dig på <strong>{{user.email}}</strong></p>
+        <a href="#/" class="btn btn-success">Tillbaka</a>
+      </div>
+      <div class="row" ng-show="hasSubmitted===false">
+        <div class="col-md-12">
+          <div class="row marketing text-center">
+            <div class="panel panel-default">
+              <div class="panel-heading text-center">Anmäl ditt intresse</div>
+              <div class="panel-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                      <div class="panel-default">
+                        <div class="panel-body">
+                          <form name="userForm" role="form" ng-submit="userForm.$valid && submit()" novalidate>
+                            <fieldset>
+                              <div class="form-group">
+                                <input class="form-control" id="inputEmail" placeholder="Ange din email" ng-model="user.email" name="email" type="text" required/>
+                              </div>
+                              <!-- Change this to a button or input when using this as a form -->
+                              <div class="form-group">
+                                <button type="submit" id="submit" class="btn btn-success btn-lg">Skicka</button>
+                              </div>
+                            </fieldset>
+                          </form>
+                          <div class="alert alert-danger" ng-show="error!=null">{{error}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

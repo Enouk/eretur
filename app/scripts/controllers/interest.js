@@ -2,7 +2,9 @@
 
 
 angular.module('ereturApp')
-  .controller('InterestCtrl', function($scope, AuthService) {
+  .controller('InterestCtrl', function($scope, $window, AuthService) {
+
+    $window.scrollTo(0, 0);
 
     $scope.hasSubmitted = false;
 

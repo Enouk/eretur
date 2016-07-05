@@ -1,1 +1,96 @@
-<p>This is the retur view.</p>
+<navigation></navigation>
+<div class="navbar-offset">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <div ng-show="state==STATES.ENTER_ORDER_ID">
+          <h3 class="text-center">Ange ditt returnnummer</h3>
+          <form role="form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Skriv ditt returnummer här">
+              <span class="input-group-addon" ng-click="onNext()">Sök</span>
+            </div>
+          </form>
+        </div>
+        <div ng-show="state==STATES.SELECT_ITEMS">
+          <h2 class="text-center">Hej {{order.customer.firstname}}</h2>
+          <p class="text-center">Välj vilka varor som du vill returnera</p>
+          <table class="table">
+            <tbody>
+              <tr ng-repeat="p in order.products">
+                <td>
+                  <input id="condensed" type="checkbox">
+                </td>
+                <td>
+                  <dl>
+                    <dt>{{p.name}}</dt>
+                    <dd>{{p.volume}}</dd>
+                    <dd>{{p.brand}}</dd>
+                  </dl>
+                </td>
+                <td>
+                  {{p.price}} kr
+                </td>
+                <td>
+                  <strong>0</strong> / <small>{{p.count}}</small>
+                </td>
+                <td>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">+</button>
+                    <button type="button" class="btn btn-default">-</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-default">Tillbaka</button>
+          <button type="button" class="btn btn-default" ng-click="onNext()">Nästa</button>
+        </div>
+        <div ng-show="state==STATES.CONFIRM">
+          <h2 class="text-center">{{order.customer.firstname}}</h2>
+          <p class="text-center">Bekräfta dina valda returer</p>
+          <table class="table">
+            <tbody>
+              <tr ng-repeat="p in order.products">
+                <td>
+                  1 st
+                </td>
+                <td>
+                  <dl>
+                    <dt>{{p.name}}</dt>
+                    <dd>{{p.volume}}</dd>
+                    <dd>{{p.brand}}</dd>
+                  </dl>
+                </td>
+                <td>
+                  {{p.price}} kr
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-default">Tillbaka</button>
+          <button type="button" class="btn btn-default">Slutför</button>
+        </div>
+        <!--         <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Vara</th>
+              <th>Antal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in order.products">
+              <td>
+                <input id="condensed" type="checkbox">
+              </td>
+              <td>{{p.name}}</td>
+              <td>{{p.count}}</td>
+            </tr>
+          </tbody>
+        </table> -->
+      </div>
+    </div>
+  </div>
+</div>

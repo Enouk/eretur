@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name ereturApp
- * @description
- * # ereturApp
- *
- * Main module of the application.
- */
 angular
   .module('ereturApp', [
     'ngAnimate',
@@ -34,6 +26,10 @@ angular
       .when('/retur', {
         templateUrl: 'views/retur.html',
         controller: 'ReturCtrl'
+      })
+      .when('/test', {
+        templateUrl: 'views/test.html',
+        controller: 'TestCtrl'
       })
       .otherwise({
         redirectTo: '/'
